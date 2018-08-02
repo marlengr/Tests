@@ -1,0 +1,5 @@
+INDEX VERSION 1.130+C:\Users\mgrabowska\eclipse-workspace\selenium\.metadata\.plugins\org.eclipse.jdt.core
+2670660030.index
+3589399411.index
+2261046712.index
+3407393911.index

@@ -1,0 +1,37 @@
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+
+
+public class TestClass {
+	private WebDriver wd;
+	private String url;
+	private String userName;
+	private String userPass;
+	
+	@Before 
+	public void setUp() {
+		
+		//przypisujemy wart do zmiennych
+		wd = new FirefoxDriver();
+		url = "http://www.tlen.pl";
+		userName = "userName";
+		userPass = "userPass";
+	}
+	
+	@Test
+	public void loginNegative() {
+		wd.get(url);
+	}
+	
+	
+	@After
+	public void tearDown() {
+		wd.quit();
+	}
+	
+}

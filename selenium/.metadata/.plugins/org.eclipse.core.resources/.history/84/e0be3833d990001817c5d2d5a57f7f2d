@@ -1,0 +1,84 @@
+package FBRegistrationTest;
+
+import java.util.List;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class FBRegistrationTest {
+
+	private WebDriver driver;
+	private String url;
+	private String imie;
+	private String nazwisko;
+	private String telefon;
+	private String haslo;
+	private String telefondwa;
+		
+	
+	@Before
+	public void setup() {
+		System.setProperty("webdriver.gecko.driver",
+                "C:\\geckodriver-v0.21.0-win64\\\\geckodriver.exe");
+		driver = new FirefoxDriver();
+		url = "http://www.facebook.com";
+		imie = "Ania";
+		nazwisko = "Kowalska";
+		telefon = "lena.qwerty@02.pl";
+		telefondwa = "lena.qwerty@02.pl";
+		haslo = "aniakowalska!@2";
+						
+	}
+	
+	@Test
+	public void fbTest() {
+		
+		driver.get(url);
+		driver.manage().window().maximize();
+
+		WebElement firstName = driver.findElement(By.name("firstname"));
+		firstName.clear();
+		firstName.sendKeys(imie);
+		
+		WebElement lastName = driver.findElement(By.name("lastname"));
+		lastName.clear();
+		lastName.sendKeys(nazwisko);
+		
+		WebElement telephone = driver.findElement(By.name("reg_email__"));
+		telephone.clear();
+		telephone.sendKeys(telefon);
+		
+		WebElement password = driver.findElement(By.name("reg_passwd__"));
+		password.clear();
+		password.sendKeys(haslo);
+		
+		List<WebElement>radioButton = driver.findElements(By.tagName("sex"));
+		driver.findElement(By.id("u_0_a")).click();
+		
+		
+		driver.findElement(By.id("u_0_13")).click();
+		
+		WebElement secondtelephone = driver.findElement(By.name("reg_email_confirmation__"));
+		secondtelephone.clear();
+		secondtelephone.sendKeys(telefondwa);
+		
+		driver.findElement(By.id("u_0_13")).click();
+		
+		//driver.switchTo().alert().dismiss();
+		
+		driver.findElement(By.xpath("/html/body/div[3]/div[2]/div/div/div/div[3]/button"));
+		
+	}
+	
+//	@After
+//	
+//	public void end() {
+//		driver.quit();
+//	}
+//	
+}

@@ -1,0 +1,35 @@
+package FBRegistrationTest;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class titleTest {
+
+	private String expectedTitle;
+	private String actualTitle;
+	private WebDriver driver;
+	
+	@Before
+	public void beforeTitle() {
+		System.setProperty("webdriver.gecko.driver",
+	            "C:\\geckodriver-v0.21.0-win64\\\\geckodriver.exe");
+		driver = new FirefoxDriver();
+		driver.get("http://www.absofttrainings.com/selenium-tutorial/");
+		
+	}
+	
+	@Test
+	public void expectedTitle() {
+		expectedTitle = "ABSoft Trainings";
+		actualTitle = driver.getTitle();
+		System.out.println(actualTitle);
+		
+		if (actualTitle.contentEquals(expectedTitle))
+			System.out.println("Test Passed");
+		else
+			System.out.println("Test failed!");
+	}
+	
+}

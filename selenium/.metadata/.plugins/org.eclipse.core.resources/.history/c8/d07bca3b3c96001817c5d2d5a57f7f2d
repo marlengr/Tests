@@ -1,0 +1,44 @@
+package FBRegistrationTest;
+
+import java.util.concurrent.TimeUnit;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class RadioButtonTest {
+
+	//klikanie w radiobutton, checkbox, po id, name lub czymkolwiek 
+	private WebDriver driver;
+	
+	@Before
+	public void beforeTest() {
+		System.setProperty("webdriver.gecko.driver",
+	            "C:\\geckodriver-v0.21.0-win64\\\\geckodriver.exe");
+		driver = new FirefoxDriver();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.navigate().to("http://www.facebook.com");
+		driver.manage().window().maximize();
+		
+	}
+	@Test
+	public void test() {
+		driver.findElement(By.id("u_0_9")).click();
+		System.out.println(driver.findElement(By.id("u_0_9")).isSelected());
+		System.out.println(driver.findElement(By.id("u_0_9")).isEnabled());
+		System.out.println(driver.findElement(By.id("u_0_9")).isDisplayed());
+		
+		Select dropdown = new Select(driver.findElement(By.id("u_0_j")));
+		dropdown.selectByVisibleText("costam");
+		
+		System.out.println(driver.findElement(By.id("u_0_j")).isSelected());
+		System.out.println(driver.findElement(By.id("u_0_j")).isEnabled());
+		System.out.println(driver.findElement(By.id("u_0_j")).isDisplayed());
+				
+		
+	}
+	
+}

@@ -1,0 +1,43 @@
+package FBRegistrationTest;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class test1 {
+	
+//	private WebDriver driver;
+//	private String url;
+//	private String imie;
+//	private String nazwisko;
+//	private String telefon;
+//	private String haslo;
+//	private String telefondwa;
+//
+//	@Before
+//	public void setup() {
+//		System.setProperty("webdriver.gecko.driver",
+//                "C:\\geckodriver-v0.21.0-win64\\\\geckodriver.exe");
+//		driver = new FirefoxDriver();
+//		url = "http://www.google.com";
+//		imie = "Ania";
+//		nazwisko = "Kowalska";
+//		telefon = "lena.qwertyyyy@onet.eu";
+//		telefondwa = "lena.qwertyyyy@onet.eu";
+//		haslo = "aniakowalska!@2";
+//	}
+//		
+//		@Test
+//		public void testimg() {
+//			driver.get(url);
+//			//driver.findElement(By.linkText("Przechodzê do serwisu")).click();
+//			System.out.println(
+//					driver.findElement(By.xpath("//img[@srcset=l/images/login/logo.png 1x, l/images/login/logo-2x.png 2x]")).getAttribute("src")
+//					);
+//		}
+		
+						
+	}
+

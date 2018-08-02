@@ -1,0 +1,36 @@
+package FBRegistrationTest;
+
+import org.junit.Before;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class test1 {
+	
+	private WebDriver driver;
+	private String url;
+	private String imie;
+	private String nazwisko;
+	private String telefon;
+	private String haslo;
+	private String telefondwa;
+
+	@Before
+	public void setup() {
+		System.setProperty("webdriver.gecko.driver",
+                "C:\\geckodriver-v0.21.0-win64\\\\geckodriver.exe");
+		driver = new FirefoxDriver();
+		url = "http://www.facebook.com";
+		imie = "Ania";
+		nazwisko = "Kowalska";
+		telefon = "lena.qwertyyyy@onet.eu";
+		telefondwa = "lena.qwertyyyy@onet.eu";
+		haslo = "aniakowalska!@2";
+		
+		@Test
+		public void testimg(){
+			
+		}
+		
+						
+	}
+}
